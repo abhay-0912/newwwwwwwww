@@ -1,9 +1,11 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { CheckCircle, Package, Mail, ArrowRight } from 'lucide-react';
 
 export default function OrderConfirmationPage() {
-  const orderNumber = 'KK' + Math.floor(100000 + Math.random() * 900000);
+  const [orderNumber] = useState('KK' + Math.floor(100000 + Math.random() * 900000));
 
   return (
     <div className="min-h-screen bg-cream pt-20 flex items-center justify-center">

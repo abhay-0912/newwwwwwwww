@@ -21,6 +21,7 @@ export default function CheckoutPage() {
     shippingMethod: 'standard',
     paymentMethod: 'card',
     cardNumber: '', cardExpiry: '', cardCvv: '', cardName: '',
+
   });
 
   const shipping = state.total >= 999 ? 0 : 99;
@@ -166,6 +167,12 @@ export default function CheckoutPage() {
 
                   {formData.paymentMethod === 'card' && (
                     <div className="space-y-3 p-4 bg-gray-50 rounded-xl">
+                      <div>
+                        <label className="text-sm font-medium text-gray-700 block mb-1">Cardholder Name</label>
+                        <input type="text" name="cardName" value={formData.cardName} onChange={handleInput}
+                          placeholder="Name on card"
+                          className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm outline-none focus:border-saffron-400" />
+                      </div>
                       <div>
                         <label className="text-sm font-medium text-gray-700 block mb-1">Card Number</label>
                         <input type="text" name="cardNumber" value={formData.cardNumber} onChange={handleInput}
